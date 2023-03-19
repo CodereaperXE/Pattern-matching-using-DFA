@@ -15,7 +15,7 @@ def construct_state_set(val):
 				if(val[i]==val[0] and count==1):
 					temp2.append((val[i],"stay"))
 				else:
-					temp2.append((val[i],1))
+					temp2.append((val[i],0))
 
 		temp1.append(temp2.copy())
 		temp2.clear()
@@ -42,8 +42,8 @@ def state_machine(pattern,string):
 				if(rules[state][i][1]=="next"):
 					state+=1
 					break
-				elif(rules[state][i][1]==1):
-					state=1
+				elif(rules[state][i][1]==0):
+					state=0
 					break
 				elif(rules[state][i][1]=="stay"):
 					break
